@@ -6,4 +6,17 @@
         <item name="colorPrimaryDark">@color/primaryDarkOrange</item>
         <item name="colorAccent">@color/turquoise</item>
     </style>
+
+    <style name="Theme.Fullscreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primaryLightOrange</item>
+        <item name="colorPrimaryDark">@color/primaryDarkOrange</item>
+        <item name="colorAccent">@color/turquoise</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+
 </resources>
