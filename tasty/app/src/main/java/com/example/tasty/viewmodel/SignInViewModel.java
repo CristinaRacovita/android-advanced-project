@@ -15,6 +15,8 @@ public class SignInViewModel extends ViewModel {
 
     private MutableLiveData<User> userMutableLiveData;
 
+    private MutableLiveData<Boolean> isGuest = new MutableLiveData<>();
+
     public MutableLiveData<User> getUser() {
 
         if (userMutableLiveData == null) {
@@ -24,12 +26,14 @@ public class SignInViewModel extends ViewModel {
 
     }
 
-    public SignInViewModel() {
+    public MutableLiveData<Boolean> getIsGuest() {
+        return isGuest;
     }
-
 
     public void loginHit() {
         Log.d(LOG_TAG, "Login Button was hit!");
+
+        isGuest.setValue(false);
 
         Log.d(LOG_TAG, "Username: " + username.getValue());
         Log.d(LOG_TAG, "Password: " + password.getValue());
@@ -38,5 +42,11 @@ public class SignInViewModel extends ViewModel {
 
         userMutableLiveData.setValue(loginUser);
 
+    }
+
+
+    public void loginGuestHit() {
+        isGuest.setValue(true);
+        Log.d(LOG_TAG, "Login as Guest Button was hit! "+isGuest.getValue());
     }
 }

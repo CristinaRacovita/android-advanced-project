@@ -5,5 +5,10 @@
     <string name="username">username</string>
     <string name="sign_in">Sign in</string>
     <string name="username_or_password_is_incorrect">Username or password is incorrect!</string>
-    <string name="next">Next</string>
+    <string name="next">Log in</string>
+    <string name="my_recipes">My Recipes</string>
+    <string name="explore">Explore</string>
+    <string name="add_recipe">Add Recipe</string>
+    <string name="my_profile">My Profile</string>
+    <string name="sign_in_as_guest">Sign in as guest</string>
 </resources>

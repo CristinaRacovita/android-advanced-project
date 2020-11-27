@@ -81,6 +81,19 @@
             android:visibility="invisible"
             app:layout_constraintTop_toBottomOf="@id/passwordEditText" />
 
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/oval_button_orange"
+            android:onClick="@{(view) -> loginViewModel.loginGuestHit()}"
+            android:text="@string/sign_in_as_guest"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <data>

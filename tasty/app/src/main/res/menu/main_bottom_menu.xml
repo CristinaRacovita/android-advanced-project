@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_my_recipes"
+        app:showAsAction="always|withText"
+        android:enabled="true"
+        android:icon="@drawable/ic_cooking"
+        android:title="@string/my_recipes" />
+    <item
+        android:id="@+id/action_explore"
+        app:showAsAction="ifRoom|withText"
+        android:enabled="true"
+        android:icon="@drawable/ic_cook_book"
+        android:title="@string/explore" />
+    <item
+        android:id="@+id/action_add"
+        app:showAsAction="always|withText"
+        android:enabled="true"
+        android:icon="@drawable/ic_plus"
+        android:title="@string/add_recipe" />
+
+    <item
+        android:id="@+id/action_profile"
+        app:showAsAction="always|withText"
+        android:enabled="true"
+        android:icon="@drawable/ic_profile_user"
+        android:title="@string/my_profile" />
+</menu>
