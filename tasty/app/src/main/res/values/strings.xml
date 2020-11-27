@@ -11,4 +11,5 @@
     <string name="add_recipe">Add Recipe</string>
     <string name="my_profile">My Profile</string>
     <string name="sign_in_as_guest">Sign in as guest</string>
+    <string name="timer">Timer</string>
 </resources>
