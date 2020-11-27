@@ -1,9 +1,9 @@
-package com.example.tasty;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.tasty.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -11,7 +11,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        startActivity(new Intent(SplashActivity.this, MainActivity.class));
+        startActivity(new Intent(SplashActivity.this, SignInActivity.class));
         finish();
     }
 }

@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Tasty</string>
     <string name="slogan">Nothing as creative as cooking</string>
+    <string name="password">password</string>
+    <string name="username">username</string>
+    <string name="sign_in">Sign in</string>
+    <string name="username_or_password_is_incorrect">Username or password is incorrect!</string>
+    <string name="next">Next</string>
 </resources>

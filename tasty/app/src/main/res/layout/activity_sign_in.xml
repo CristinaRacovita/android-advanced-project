@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_color"
+        tools:context=".activities.SignInActivity">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/oval_button_white"
+            android:onClick="@{(view) -> loginViewModel.loginHit()}"
+            android:text="@string/next"
+            android:textColor="@color/primaryDarkColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/errors" />
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:drawableStart="@drawable/ic_padlock"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:text="@={loginViewModel.password}"
+            android:textColor="@color/primaryDarkColor"
+            app:layout_constraintTop_toBottomOf="@+id/usernameEditText" />
+
+
+        <EditText
+            android:id="@+id/usernameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:drawableStart="@drawable/ic_user"
+            android:ems="10"
+            android:hint="@string/username"
+            android:text="@={loginViewModel.username}"
+            android:textColor="@color/primaryDarkColor"
+            app:layout_constraintTop_toBottomOf="@+id/signInTextView" />
+
+        <ImageView
+            android:id="@+id/chefImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/ic_soup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/signInTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/sign_in"
+            android:textColor="@color/primaryDarkColor"
+            android:textSize="30sp"
+            app:layout_constraintTop_toBottomOf="@id/chefImage" />
+
+        <TextView
+            android:id="@+id/errors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/username_or_password_is_incorrect"
+            android:textColor="@color/accentColor"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@id/passwordEditText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+
+        <variable
+            name="loginViewModel"
+            type="com.example.tasty.viewmodel.SignInViewModel" />
+    </data>
+
+
+</layout>

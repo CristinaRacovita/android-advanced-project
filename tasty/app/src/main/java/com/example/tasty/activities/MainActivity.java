@@ -1,8 +1,10 @@
-package com.example.tasty;
+package com.example.tasty.activities;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
+import com.example.tasty.R;
 
 public class MainActivity extends AppCompatActivity {
 

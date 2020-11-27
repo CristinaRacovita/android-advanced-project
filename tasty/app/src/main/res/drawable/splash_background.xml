@@ -4,9 +4,10 @@
     <item android:drawable="@drawable/gradient_color" />
 
 
-    <item android:drawable="@drawable/ic_chef"
-        android:width="200dp"
-        android:height="200dp"
-        android:gravity="center"/>
+    <item
+        android:width="100dp"
+        android:height="100dp"
+        android:drawable="@drawable/ic_soup"
+        android:gravity="center" />
 
 </layer-list>

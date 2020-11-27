@@ -8,9 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="primaryOrange">#ff9e80</color>
-    <color name="primaryDarkOrange">#c96f53</color>
-    <color name="primaryLightOrange">#ffd0b0</color>
-    <color name="turquoise">#4db6ac</color>
-    
+    <color name="primaryColor">#AFE6FF</color>
+    <color name="primaryDarkColor">#4bacb8</color>
+    <color name="primaryLightColor">#b4ffff</color>
+    <color name="accentColor">#E33442</color>
+
 </resources>
