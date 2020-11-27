@@ -19,13 +19,12 @@ public class MainWorker extends Worker {
     public MainWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
         //timerText = (TextView) ((Activity) context).findViewById(R.id.timer_test);
-        Log.d(MainViewModel.LOG_TAG, "creat");
     }
 
     @NonNull
     @Override
     public Result doWork() {
-        Log.d(MainViewModel.LOG_TAG, "facem treaba");
+        Log.d(MainViewModel.LOG_TAG, "work work work");
         //timerText.setText("15:00");
         return Result.success();
     }
