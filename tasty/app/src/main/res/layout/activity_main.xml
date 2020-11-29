@@ -15,25 +15,6 @@
             android:layout_height="0dp"
             android:layout_weight="2" >
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TEST"
-                android:onClick="@{(view) -> mainViewModel.count()}"
-                android:gravity="center"
-                android:layout_gravity="center" />
-
-            <TextView
-                android:id="@+id/timer_test"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="30sp"
-                android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                tools:text="10:00"
-                />
-
         </FrameLayout>
 
 
@@ -51,10 +32,4 @@
 
     </LinearLayout>
 
-    <data>
-
-        <variable
-            name="mainViewModel"
-            type="com.example.tasty.viewmodel.MainViewModel" />
-    </data>
 </layout>
