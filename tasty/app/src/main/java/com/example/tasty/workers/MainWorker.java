@@ -18,7 +18,7 @@ public class MainWorker extends Worker {
 
     public MainWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
-        //timerText = (TextView) ((Activity) context).findViewById(R.id.timer_test);
+        //timerText = (getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE)).findViewById(R.id.timer_test);
     }
 
     @NonNull
