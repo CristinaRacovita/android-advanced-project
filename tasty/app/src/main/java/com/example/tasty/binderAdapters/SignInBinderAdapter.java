@@ -20,7 +20,7 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class SignInBinderAdapter {
-    private static Boolean isGuest;
+    private static Boolean isGuest = false;
 
     @BindingAdapter({"username", "password", "usernameEditText", "passwordEditText", "errorTextView"})
     public static void check(Button button, String username, String password, EditText usernameEditText, EditText passwordEditText, TextView errorTextView) {
@@ -77,7 +77,7 @@ public class SignInBinderAdapter {
             Log.d(SignInViewModel.LOG_TAG, "Start receive notifications");
 
             if (isGuest) {
-                final PeriodicWorkRequest periodicWorkRequest1 = new PeriodicWorkRequest.Builder(SignInWorker.class, Duration.ofMinutes(15L))
+                final PeriodicWorkRequest periodicWorkRequest1 = new PeriodicWorkRequest.Builder(SignInWorker.class, Duration.ofDays(1L))
                         .setInitialDelay(5000, TimeUnit.MILLISECONDS)
                         .build();
                 workManager.enqueueUniquePeriodicWork("Receive Notification", ExistingPeriodicWorkPolicy.KEEP, periodicWorkRequest1);
