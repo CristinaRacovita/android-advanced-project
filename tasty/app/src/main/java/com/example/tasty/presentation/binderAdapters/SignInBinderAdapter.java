@@ -1,4 +1,4 @@
-package com.example.tasty.binderAdapters;
+package com.example.tasty.presentation.binderAdapters;
 
 import android.content.Intent;
 import android.util.Log;
@@ -12,9 +12,9 @@ import androidx.work.ExistingPeriodicWorkPolicy;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
-import com.example.tasty.activities.MainActivity;
-import com.example.tasty.viewmodel.SignInViewModel;
-import com.example.tasty.workers.SignInWorker;
+import com.example.tasty.presentation.activities.MainActivity;
+import com.example.tasty.presentation.viewmodel.SignInViewModel;
+import com.example.tasty.domain.SignInWorker;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;

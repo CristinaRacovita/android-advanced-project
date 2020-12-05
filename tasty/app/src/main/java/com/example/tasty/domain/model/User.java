@@ -1,4 +1,4 @@
-package com.example.tasty.model;
+package com.example.tasty.domain.model;
 
 public class User {
     private String username;

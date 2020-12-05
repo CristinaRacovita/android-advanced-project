@@ -1,4 +1,4 @@
-package com.example.tasty.activities;
+package com.example.tasty.presentation.activities;
 
 import android.content.Intent;
 import android.os.Bundle;

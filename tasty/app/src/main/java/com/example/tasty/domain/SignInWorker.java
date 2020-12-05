@@ -1,6 +1,5 @@
-package com.example.tasty.workers;
+package com.example.tasty.domain;
 
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -15,8 +14,8 @@ import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
 import com.example.tasty.R;
-import com.example.tasty.activities.MainActivity;
-import com.example.tasty.viewmodel.SignInViewModel;
+import com.example.tasty.presentation.activities.MainActivity;
+import com.example.tasty.presentation.viewmodel.SignInViewModel;
 
 public class SignInWorker extends Worker {
 

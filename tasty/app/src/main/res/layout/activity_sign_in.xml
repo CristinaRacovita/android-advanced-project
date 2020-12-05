@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/gradient_color"
-        tools:context=".activities.SignInActivity">
+        tools:context=".presentation.activities.SignInActivity">
 
         <Button
             android:id="@+id/button"
@@ -105,7 +105,7 @@
 
         <variable
             name="loginViewModel"
-            type="com.example.tasty.viewmodel.SignInViewModel" />
+            type="com.example.tasty.presentation.viewmodel.SignInViewModel" />
     </data>
 
 

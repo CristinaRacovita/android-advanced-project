@@ -1,5 +1,6 @@
-package com.example.tasty.viewmodel;
+package com.example.tasty.presentation.viewmodel;
 
+import androidx.databinding.ObservableField;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.work.WorkManager;
@@ -10,8 +11,8 @@ public class SignInViewModel extends ViewModel {
 
     public final WorkManager workManager;
 
-    public MutableLiveData<String> username = new MutableLiveData<>();
-    public MutableLiveData<String> password = new MutableLiveData<>();
+    public ObservableField<String> username = new ObservableField<>();
+    public ObservableField<String> password = new ObservableField<>();
 
     public SignInViewModel(WorkManager workManager) {
         this.workManager = workManager;
