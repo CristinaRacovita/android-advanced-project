@@ -9,10 +9,10 @@ import androidx.fragment.app.Fragment;
 
 import com.example.tasty.R;
 
-public class MyRecipeFragment extends Fragment {
+public class MyRecipesFragment extends Fragment {
 
-    public static MyRecipeFragment newInstance(){
-        return new MyRecipeFragment();
+    public static MyRecipesFragment newInstance(){
+        return new MyRecipesFragment();
     }
 
     @Override
@@ -23,6 +23,6 @@ public class MyRecipeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_my_recipe, container, false);
+        return inflater.inflate(R.layout.fragment_my_recipes, container, false);
     }
 }
