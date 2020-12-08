@@ -13,4 +13,5 @@
     <string name="sign_in_as_guest">Sign in as guest</string>
     <string name="timer">Timer</string>
     <string name="learn_more">LEARN MORE</string>
+    <string name="hello_blank_fragment">Hello My Fragment</string>
 </resources>
