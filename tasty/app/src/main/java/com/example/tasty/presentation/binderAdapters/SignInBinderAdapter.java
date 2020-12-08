@@ -29,29 +29,17 @@ public class SignInBinderAdapter {
             isGuest = false;
             Log.d(SignInViewModel.LOG_TAG + "2", "Username: " + username + " and password: " + password);
             if (username == null) {
-                Log.w(SignInViewModel.LOG_TAG, "Username is null");
-                usernameEditText.setError("Username cannot be empty!");
-                errorTextView.setVisibility(View.INVISIBLE);
+                setAnError(usernameEditText, errorTextView, "Username is null", "Username cannot be empty!");
             } else if (username.isEmpty()) {
-                Log.w(SignInViewModel.LOG_TAG, "Username is null");
-                usernameEditText.setError("Username cannot be empty!");
-                errorTextView.setVisibility(View.INVISIBLE);
+                setAnError(usernameEditText, errorTextView, "Username is null", "Username cannot be empty!");
             } else if (username.length() <= 5) {
-                Log.w(SignInViewModel.LOG_TAG, "Username is too short");
-                usernameEditText.setError("Enter at least 6 Digit username!");
-                errorTextView.setVisibility(View.INVISIBLE);
+                setAnError(usernameEditText, errorTextView, "Username is too short", "Enter at least 6 Digit username!");
             } else if (password == null) {
-                Log.w(SignInViewModel.LOG_TAG, "Password is null");
-                passwordEditText.setError("Password cannot be empty!");
-                errorTextView.setVisibility(View.INVISIBLE);
+                setAnError(passwordEditText, errorTextView, "Password is null", "Password cannot be empty!");
             } else if (password.isEmpty()) {
-                Log.w(SignInViewModel.LOG_TAG, "Password is null");
-                passwordEditText.setError("Password cannot be empty!");
-                errorTextView.setVisibility(View.INVISIBLE);
+                setAnError(passwordEditText, errorTextView, "Password is null", "Password cannot be empty!");
             } else if (password.length() <= 5) {
-                Log.w(SignInViewModel.LOG_TAG, "Password is too short");
-                passwordEditText.setError("Enter at least 6 Digit Password!");
-                errorTextView.setVisibility(View.INVISIBLE);
+                setAnError(passwordEditText, errorTextView, "Password is too short", "Enter at least 6 Digit Password!");
             } else {
                 //fake login
                 if (username.equals("admin1234") && password.equals("admin1234")) {
@@ -65,6 +53,12 @@ public class SignInBinderAdapter {
                 }
             }
         });
+    }
+
+    private static void setAnError(EditText usernameEditText, TextView errorTextView, String s, String s2) {
+        Log.w(SignInViewModel.LOG_TAG, s);
+        usernameEditText.setError(s2);
+        errorTextView.setVisibility(View.INVISIBLE);
     }
 
     @BindingAdapter({"errors", "workManager"})
