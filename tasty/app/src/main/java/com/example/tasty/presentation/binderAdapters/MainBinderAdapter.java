@@ -10,8 +10,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainBinderAdapter {
 
-    public static final String TAG_MAIN = "MainActivity";
-
     @BindingAdapter({"fragment"})
     public static void getItem(BottomNavigationView bottomNavigationView, @IdRes int fragment) {
         NavHostFragment navHostFragment = (NavHostFragment) ((AppCompatActivity) bottomNavigationView.getContext()).getSupportFragmentManager().findFragmentById(fragment);

@@ -1,13 +1,13 @@
 package com.example.tasty.presentation.binderAdapters;
 
+import androidx.databinding.BindingAdapter;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.tasty.domain.model.RecipeItem;
 import com.example.tasty.presentation.adapters.AllRecipesAdapter;
 
 import java.util.List;
-
-import androidx.databinding.BindingAdapter;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 public class AllRecipesBinderAdapter {
     @BindingAdapter("recipeItems")

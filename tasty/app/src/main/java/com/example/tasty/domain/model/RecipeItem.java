@@ -1,12 +1,11 @@
 package com.example.tasty.domain.model;
 
+import androidx.annotation.DrawableRes;
+
 public class RecipeItem {
     private String titleRecipe;
+    @DrawableRes
     private int imageDrawableResource;
-
-    public RecipeItem() {
-
-    }
 
     public RecipeItem(String titleRecipe, int imageDrawableResource) {
         this.titleRecipe = titleRecipe;

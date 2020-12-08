@@ -2,15 +2,15 @@ package com.example.tasty.presentation.activities;
 
 import android.os.Bundle;
 
-import com.example.tasty.R;
-import com.example.tasty.databinding.ActivityMainBinding;
-import com.example.tasty.presentation.viewmodel.MainViewModel;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
+
+import com.example.tasty.R;
+import com.example.tasty.databinding.ActivityMainBinding;
+import com.example.tasty.presentation.viewmodel.MainViewModel;
 
 public class MainActivity extends AppCompatActivity {
     @Override

@@ -1,12 +1,11 @@
 package com.example.tasty.data;
 
+import androidx.annotation.DrawableRes;
+
 public class RecipeItemDTO {
     private String titleRecipe;
+    @DrawableRes
     private int imageDrawableResource;
-
-    public RecipeItemDTO() {
-
-    }
 
     public RecipeItemDTO(String titleRecipe, int imageDrawableResource) {
         this.titleRecipe = titleRecipe;
@@ -17,15 +16,7 @@ public class RecipeItemDTO {
         return titleRecipe;
     }
 
-    public void setTitleRecipe(String titleRecipe) {
-        this.titleRecipe = titleRecipe;
-    }
-
     public int getImageDrawableResource() {
         return imageDrawableResource;
-    }
-
-    public void setImageDrawableResource(int imageDrawableResource) {
-        this.imageDrawableResource = imageDrawableResource;
     }
 }

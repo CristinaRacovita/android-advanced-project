@@ -16,4 +16,9 @@
         android:name="com.example.tasty.presentation.fragments.MyRecipesFragment"
         android:label="fragment_my_recipes"
         tools:layout="@layout/fragment_my_recipes" />
+    <fragment
+        android:id="@+id/action_profile"
+        android:name="com.example.tasty.presentation.fragments.MyProfileFragment"
+        android:label="fragment_my_profile"
+        tools:layout="@layout/fragment_my_profile" />
 </navigation>

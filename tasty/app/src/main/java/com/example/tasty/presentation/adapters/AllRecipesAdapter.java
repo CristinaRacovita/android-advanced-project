@@ -3,17 +3,16 @@ package com.example.tasty.presentation.adapters;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.tasty.R;
-import com.example.tasty.databinding.AllRecipesFragmentBinding;
 import com.example.tasty.databinding.RecipeListItemLayoutBinding;
 import com.example.tasty.domain.model.RecipeItem;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import androidx.annotation.NonNull;
-import androidx.databinding.DataBindingUtil;
-import androidx.recyclerview.widget.RecyclerView;
 
 public class AllRecipesAdapter extends RecyclerView.Adapter<AllRecipesAdapter.AllRecipesViewHolder> {
     private final List<RecipeItem> itemList;
@@ -44,13 +43,14 @@ public class AllRecipesAdapter extends RecyclerView.Adapter<AllRecipesAdapter.Al
         return itemList.size();
     }
 
-    public void updateItems(List<RecipeItem> updatedList){
+    public void updateItems(List<RecipeItem> updatedList) {
         this.itemList.addAll(updatedList);
         notifyDataSetChanged();
     }
 
-    public class AllRecipesViewHolder extends RecyclerView.ViewHolder{
+    public class AllRecipesViewHolder extends RecyclerView.ViewHolder {
         private final RecipeListItemLayoutBinding binding;
+
         public AllRecipesViewHolder(RecipeListItemLayoutBinding binding) {
             super(binding.getRoot());
             this.binding = binding;

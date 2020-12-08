@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.work.WorkManager;
 
 import com.example.tasty.R;
-
 import com.example.tasty.databinding.ActivitySignInBinding;
 import com.example.tasty.presentation.viewmodel.SignInViewModel;
 
@@ -36,7 +35,5 @@ public class SignInActivity extends AppCompatActivity {
         ActivitySignInBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_in);
 
         binding.setLoginViewModel(loginViewModel);
-        //binding.setLifecycleOwner(this);
-
     }
 }

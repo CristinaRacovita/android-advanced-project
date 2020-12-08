@@ -12,9 +12,9 @@ import androidx.work.ExistingPeriodicWorkPolicy;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
+import com.example.tasty.domain.SignInWorker;
 import com.example.tasty.presentation.activities.MainActivity;
 import com.example.tasty.presentation.viewmodel.SignInViewModel;
-import com.example.tasty.domain.SignInWorker;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
