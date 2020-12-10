@@ -15,32 +15,29 @@
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp">
 
-
         <TextView
+            android:id="@+id/myTitle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
             android:gravity="top|center"
             tools:text="Title for Recipe"
             android:text="@{model.titleRecipe}"
-            android:background="@drawable/recipe_2"
+            app:image_url="@{model.imageUrl}"
             android:textColor="@color/white"
             android:shadowColor="#000000"
             android:shadowDx="1.5"
             android:shadowDy="1.3"
             android:shadowRadius="10"
-            android:textSize="30sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/learn_more"
-            android:textSize="20sp"
-            android:textColor="@color/black"
+        <ToggleButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/favourite_toggle"
+            android:textColor="@android:color/transparent"
             android:layout_gravity="bottom|end"
             android:layout_marginEnd="10dp"
-            android:padding="10dp"
-            android:background="@drawable/oval_button_white"
             android:layout_marginBottom="10dp"/>
 
 

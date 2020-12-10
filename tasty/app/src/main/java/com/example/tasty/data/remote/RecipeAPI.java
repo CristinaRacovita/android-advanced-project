@@ -16,7 +16,7 @@ import retrofit2.http.GET;
 public interface RecipeAPI {
     String BASE_URL = "https://tasty-69676-default-rtdb.firebaseio.com/";
 
-    @GET("recipes/json")
+    @GET("recipes.json")
     Call<List<RecipeItemDTO>> getRecipes();
 
     static RecipeAPI createAPI() {
@@ -26,14 +26,14 @@ public interface RecipeAPI {
                 .addInterceptor(interceptor)
                 .build();
 
-        Gson gson = new GsonBuilder()
-                .setLenient()
-                .create();
+//        Gson gson = new GsonBuilder()
+//                .setLenient()
+//                .create();
 
         return new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .client(okHttpClient)
-                .addConverterFactory(GsonConverterFactory.create(gson))
+                .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(RecipeAPI.class);
     }

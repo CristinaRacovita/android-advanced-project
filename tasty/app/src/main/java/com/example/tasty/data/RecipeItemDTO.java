@@ -3,6 +3,7 @@ package com.example.tasty.data;
 import com.google.gson.annotations.SerializedName;
 
 public class RecipeItemDTO {
+    @SerializedName("title")
     private String titleRecipe;
 
     @SerializedName("image_url")
