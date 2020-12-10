@@ -13,8 +13,10 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.tasty.R;
-import com.example.tasty.data.InMemoryDataSource;
+import com.example.tasty.data.remote.RecipeAPI;
+import com.example.tasty.data.remote.RemoteDataSource;
 import com.example.tasty.databinding.AllRecipesFragmentBinding;
+import com.example.tasty.domain.RecipeItemsMediator;
 import com.example.tasty.domain.RecipeItemsRepository;
 import com.example.tasty.domain.useCases.FetchRecipeItemsUseCase;
 import com.example.tasty.presentation.viewmodel.AllRecipesViewModel;
@@ -31,8 +33,9 @@ public class AllRecipesFragment extends Fragment {
             @NonNull
             @Override
             public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-                RecipeItemsRepository repository = new InMemoryDataSource();
-                FetchRecipeItemsUseCase useCase = new FetchRecipeItemsUseCase(repository);
+                RecipeItemsRepository repository = new RemoteDataSource(RecipeAPI.createAPI());
+                RecipeItemsMediator mediator = new RecipeItemsMediator(repository);
+                FetchRecipeItemsUseCase useCase = new FetchRecipeItemsUseCase(mediator);
                 return (T) new AllRecipesViewModel(useCase);
             }
         };

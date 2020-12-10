@@ -5,6 +5,6 @@ import com.example.tasty.domain.model.RecipeItem;
 
 public class RecipeItemBuilder {
     public static RecipeItem toRecipeItem(RecipeItemDTO recipeItemDTO) {
-        return new RecipeItem(recipeItemDTO.getTitleRecipe(), recipeItemDTO.getImageDrawableResource());
+        return new RecipeItem(recipeItemDTO.getTitleRecipe(), recipeItemDTO.getImageUrl());
     }
 }

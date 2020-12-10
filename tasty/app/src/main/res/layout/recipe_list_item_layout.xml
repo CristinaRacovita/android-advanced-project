@@ -22,7 +22,7 @@
             android:gravity="top|center"
             tools:text="Title for Recipe"
             android:text="@{model.titleRecipe}"
-            android:background="@{model.imageDrawableResource}"
+            android:background="@drawable/recipe_2"
             android:textColor="@color/white"
             android:shadowColor="#000000"
             android:shadowDx="1.5"

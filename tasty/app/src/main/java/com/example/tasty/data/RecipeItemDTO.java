@@ -1,22 +1,23 @@
 package com.example.tasty.data;
 
-import androidx.annotation.DrawableRes;
+import com.google.gson.annotations.SerializedName;
 
 public class RecipeItemDTO {
     private String titleRecipe;
-    @DrawableRes
-    private int imageDrawableResource;
 
-    public RecipeItemDTO(String titleRecipe, int imageDrawableResource) {
+    @SerializedName("image_url")
+    private String imageUrl;
+
+    public RecipeItemDTO(String titleRecipe, String imageUrl) {
         this.titleRecipe = titleRecipe;
-        this.imageDrawableResource = imageDrawableResource;
+        this.imageUrl = imageUrl;
     }
 
     public String getTitleRecipe() {
         return titleRecipe;
     }
 
-    public int getImageDrawableResource() {
-        return imageDrawableResource;
+    public String getImageUrl() {
+        return imageUrl;
     }
 }
