@@ -5,7 +5,6 @@ import android.util.Log;
 import com.example.tasty.data.RecipeItemDTO;
 import com.example.tasty.domain.RecipeItemsRepository;
 
-import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
@@ -20,8 +19,11 @@ public class RemoteDataSource implements RecipeItemsRepository {
     @Override
     public List<RecipeItemDTO> getRecipeItems() {
         try {
-            return api.getRecipes().execute().body();
-        } catch (IOException e) {
+            List<RecipeItemDTO> recipeItemDTOS = api.getRecipes().execute().body();
+            if (recipeItemDTOS != null)
+                return recipeItemDTOS;
+            return Collections.emptyList();
+        } catch (Exception e) {
             Log.w(TAG, "Something went wrong", e);
             return Collections.emptyList();
         }

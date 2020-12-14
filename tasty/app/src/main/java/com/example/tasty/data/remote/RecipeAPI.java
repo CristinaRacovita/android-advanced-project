@@ -26,10 +26,6 @@ public interface RecipeAPI {
                 .addInterceptor(interceptor)
                 .build();
 
-//        Gson gson = new GsonBuilder()
-//                .setLenient()
-//                .create();
-
         return new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .client(okHttpClient)
