@@ -34,6 +34,7 @@
         <ToggleButton
             android:layout_width="40dp"
             android:layout_height="40dp"
+            app:recipe="@{model}"
             android:background="@drawable/favourite_toggle"
             android:textColor="@android:color/transparent"
             android:layout_gravity="bottom|end"

@@ -4,10 +4,10 @@ import com.google.gson.annotations.SerializedName;
 
 public class RecipeItemDTO {
     @SerializedName("title")
-    private String titleRecipe;
+    private final String titleRecipe;
 
     @SerializedName("image_url")
-    private String imageUrl;
+    private final String imageUrl;
 
     public RecipeItemDTO(String titleRecipe, String imageUrl) {
         this.titleRecipe = titleRecipe;

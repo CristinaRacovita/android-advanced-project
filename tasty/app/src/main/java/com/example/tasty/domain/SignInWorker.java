@@ -6,7 +6,6 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
@@ -15,7 +14,8 @@ import androidx.work.WorkerParameters;
 
 import com.example.tasty.R;
 import com.example.tasty.presentation.activities.MainActivity;
-import com.example.tasty.presentation.viewmodel.SignInViewModel;
+
+import timber.log.Timber;
 
 public class SignInWorker extends Worker {
 
@@ -29,7 +29,7 @@ public class SignInWorker extends Worker {
     @NonNull
     @Override
     public Result doWork() {
-        Log.d(SignInViewModel.LOG_TAG, "work work work");
+        Timber.d("work work work");
 
         sendNotification();
 
@@ -62,7 +62,7 @@ public class SignInWorker extends Worker {
         }
 
         mNotificationManager.notify(0, mBuilder.build());
-        Log.d(SignInViewModel.LOG_TAG, "Notification was created");
+        Timber.d("Notification was created");
 
         Intent mainIntent = new Intent(getApplicationContext(), MainActivity.class);
         context.startActivity(mainIntent);

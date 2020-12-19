@@ -13,10 +13,9 @@ import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 public class RecipeItemsMediator {
-    private static final String TAG = "RecipeItemsMediator";
     private final RecipeItemsRepository remoteRepository;
     private final ExecutorService executorService;
-    private MutableLiveData<List<RecipeItem>> liveRecipes;
+    private final MutableLiveData<List<RecipeItem>> liveRecipes;
 
     public RecipeItemsMediator(RecipeItemsRepository remoteRepository) {
         this.remoteRepository = remoteRepository;

@@ -1,8 +1,8 @@
 package com.example.tasty.presentation.binderAdapters;
 
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -11,6 +11,9 @@ import androidx.databinding.BindingAdapter;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.transition.Transition;
+import com.example.tasty.domain.model.RecipeItem;
+
+import timber.log.Timber;
 
 
 public class RecipeItemBinderAdapter {
@@ -24,7 +27,7 @@ public class RecipeItemBinderAdapter {
 
                     @Override
                     public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
-                        Log.d(TAG, "Image is loaded");
+                        Timber.d("Image is loaded");
                         textView.setBackground(resource);
                     }
 
@@ -33,5 +36,13 @@ public class RecipeItemBinderAdapter {
 
                     }
                 });
+    }
+
+    @BindingAdapter({"recipe"})
+    public static void setFavouriteRecipe(ToggleButton toggleButton, RecipeItem recipe) {
+        toggleButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            recipe.setFavourite(isChecked);
+            Timber.d(recipe.getFavourite().toString());
+        });
     }
 }

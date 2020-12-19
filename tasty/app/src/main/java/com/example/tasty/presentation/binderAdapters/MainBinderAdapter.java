@@ -13,6 +13,7 @@ public class MainBinderAdapter {
     @BindingAdapter({"fragment"})
     public static void getItem(BottomNavigationView bottomNavigationView, @IdRes int fragment) {
         NavHostFragment navHostFragment = (NavHostFragment) ((AppCompatActivity) bottomNavigationView.getContext()).getSupportFragmentManager().findFragmentById(fragment);
+        assert navHostFragment != null;
         NavigationUI.setupWithNavController(bottomNavigationView, navHostFragment.getNavController());
     }
 }
