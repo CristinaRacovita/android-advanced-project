@@ -1,7 +1,6 @@
 package com.example.tasty.presentation.binderAdapters;
 
 import android.content.Intent;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,15 +18,18 @@ import com.example.tasty.presentation.viewmodel.SignInViewModel;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
+import timber.log.Timber;
+
 public class SignInBinderAdapter {
     private static Boolean isGuest = false;
 
     @BindingAdapter({"username", "password", "usernameEditText", "passwordEditText", "errorTextView"})
     public static void check(Button button, String username, String password, EditText usernameEditText, EditText passwordEditText, TextView errorTextView) {
         button.setOnClickListener(v -> {
-            Log.i(SignInViewModel.LOG_TAG, "Log in as a user");
+            //throw new RuntimeException("Crash Trash");
+            Timber.i("Log in as a user");
             isGuest = false;
-            Log.d(SignInViewModel.LOG_TAG + "2", "Username: " + username + " and password: " + password);
+            Timber.d("Username: " + username + " and password: " + password);
             if (username == null) {
                 setAnError(usernameEditText, errorTextView, "Username is null", "Username cannot be empty!");
             } else if (username.isEmpty()) {
@@ -41,22 +43,25 @@ public class SignInBinderAdapter {
             } else if (password.length() <= 5) {
                 setAnError(passwordEditText, errorTextView, "Password is too short", "Enter at least 6 Digit Password!");
             } else {
-                //fake login
-                if (username.equals("admin1234") && password.equals("admin1234")) {
-                    Log.i(SignInViewModel.LOG_TAG, "Username and password is correct");
-                    Intent mainIntent = new Intent(button.getContext(), MainActivity.class);
-                    button.getContext().startActivity(mainIntent);
-                    errorTextView.setVisibility(View.INVISIBLE);
-                } else {
-                    Log.w(SignInViewModel.LOG_TAG, "Username and password is incorrect");
-                    errorTextView.setVisibility(View.VISIBLE);
-                }
+                login(button, username, password, errorTextView);
             }
         });
     }
 
+    private static void login(Button button, String username, String password, TextView errorTextView) {
+        if (username.equals("admin1234") && password.equals("admin1234")) {
+            Timber.i("Username and password is correct");
+            Intent mainIntent = new Intent(button.getContext(), MainActivity.class);
+            button.getContext().startActivity(mainIntent);
+            errorTextView.setVisibility(View.INVISIBLE);
+        } else {
+            Timber.tag(SignInViewModel.LOG_TAG).w("Username and password is incorrect");
+            errorTextView.setVisibility(View.VISIBLE);
+        }
+    }
+
     private static void setAnError(EditText usernameEditText, TextView errorTextView, String s, String s2) {
-        Log.w(SignInViewModel.LOG_TAG, s);
+        Timber.tag(SignInViewModel.LOG_TAG).w(s);
         usernameEditText.setError(s2);
         errorTextView.setVisibility(View.INVISIBLE);
     }
@@ -64,11 +69,11 @@ public class SignInBinderAdapter {
     @BindingAdapter({"errors", "workManager"})
     public static void loginAsGuest(Button button, TextView errors, WorkManager workManager) {
         button.setOnClickListener(v -> {
-            Log.i(SignInViewModel.LOG_TAG, "Log in as a guest");
+            Timber.i("Log in as a guest");
             errors.setVisibility(View.INVISIBLE);
             isGuest = true;
 
-            Log.d(SignInViewModel.LOG_TAG, "Start receive notifications");
+            Timber.d("Start receive notifications");
 
             if (isGuest) {
                 final PeriodicWorkRequest periodicWorkRequest1 = new PeriodicWorkRequest.Builder(SignInWorker.class, Duration.ofDays(1L))
