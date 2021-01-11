@@ -14,4 +14,18 @@
     <string name="timer">Timer</string>
     <string name="learn_more">LEARN MORE</string>
     <string name="hello_blank_fragment">Hello My Fragment</string>
+    <string name="user_null">Username is null</string>
+    <string name="user_empty">Username cannot be empty!</string>
+    <string name="enter_character">Enter at least 6 Digit username!</string>
+    <string name="username_too_short">Username is too short</string>
+    <string name="pass_null">Password is null</string>
+    <string name="pass_empty">Password cannot be empty!</string>
+    <string name="pass_too_short">Password is too short</string>
+    <string name="pass_character">Enter at least 6 Digit Password!</string>
+    <string name="guest">You\'re logged as a guest!</string>
+    <string name="danger">Your data is in danger! We suggest you to login with username and password!</string>
+    <string name="recipe_0">Chicken Ranch</string>
+    <string name="recipe_1">Veggie &amp; Chicken Tart</string>
+    <string name="recipe_2">Ice Cream</string>
+    <string name="recipe_3">Eggs with Spinach</string>
 </resources>
