@@ -45,8 +45,8 @@ public class SignInWorker extends Worker {
 
         mBuilder.setContentIntent(pendingIntent);
         mBuilder.setSmallIcon(R.drawable.ic_warning);
-        mBuilder.setContentTitle("You're logged as a guest!");
-        mBuilder.setContentText("Your data is in danger! We suggest you to login with username and password!");
+        mBuilder.setContentTitle(context.getString(R.string.guest));
+        mBuilder.setContentText(context.getString(R.string.danger));
 
         NotificationManager mNotificationManager =
                 (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);

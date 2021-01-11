@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Tasty</string>
+    <string name="slogan">Nimic nu-i asa de creativ ca gatitul</string>
+    <string name="password">parola</string>
+    <string name="username">username</string>
+    <string name="sign_in">Logare</string>
+    <string name="username_or_password_is_incorrect">Username sau parola incorecta!</string>
+    <string name="next">Logare</string>
+    <string name="my_recipes">Retele mele</string>
+    <string name="explore">Explorare</string>
+    <string name="add_recipe">Adauga Reteta</string>
+    <string name="my_profile">Profilul meu</string>
+    <string name="sign_in_as_guest">Logare ca oaspete</string>
+    <string name="timer">Temporizator</string>
+    <string name="learn_more">AFLA MAI MULTE</string>
+    <string name="hello_blank_fragment">Buna Fragmentul Meu</string>
+    <string name="user_null">Username-ul este nul</string>
+    <string name="user_empty">Username-ul nu poate fi gol!</string>
+    <string name="enter_character">Introduceti un username de cel putin 6 caractere!</string>
+    <string name="username_too_short">Username-ul este prea scurt</string>
+    <string name="pass_null">Parola este nula</string>
+    <string name="pass_empty">Parola nu poate fi goala!</string>
+    <string name="pass_too_short">Parola este prea scurta!</string>
+    <string name="pass_character">Introduceti o parola de cel putin 6 caractere!</string>
+    <string name="guest">Esti logat ca oaspete!</string>
+    <string name="danger">Datele tale sunt in pericol!Iti sugeram sa te loghezi cu username si parola!</string>
+    <string name="recipe_0">Ranch de Pui</string>
+    <string name="recipe_1">Tarta cu Legume &amp; Pui</string>
+    <string name="recipe_2">Inghetata</string>
+    <string name="recipe_3">Oua cu Spanac</string>
+</resources>

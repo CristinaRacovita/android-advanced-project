@@ -21,7 +21,7 @@
             android:layout_height="200dp"
             android:gravity="top|center"
             tools:text="Title for Recipe"
-            android:text="@{model.titleRecipe}"
+            app:titleRes="@{model.titleRecipe}"
             app:image_url="@{model.imageUrl}"
             android:textColor="@color/white"
             android:shadowColor="#000000"
