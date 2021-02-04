@@ -1,10 +1,11 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Theme.Tasty" parent="Theme.AppCompat.Light">
+    <style name="Theme.Tasty" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primaryLightColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="colorAccent">@color/accentColor</item>
+        <item name="android:textAllCaps">false</item>
     </style>
 
     <style name="Theme.Fullscreen" parent="Theme.AppCompat.Light.NoActionBar">

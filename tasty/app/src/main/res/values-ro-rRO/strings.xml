@@ -28,4 +28,6 @@
     <string name="recipe_1">Tarta cu Legume &amp; Pui</string>
     <string name="recipe_2">Inghetata</string>
     <string name="recipe_3">Oua cu Spanac</string>
+    <string name="settings">Setari</string>
+    <string name="new_version_available_update_now">O noua versiune valabila Descarc-o Acum</string>
 </resources>
