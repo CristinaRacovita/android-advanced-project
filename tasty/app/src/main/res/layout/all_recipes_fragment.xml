@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         tools:context=".presentation.fragments.AllRecipesFragment">
 
-        <ProgressBar
+        <com.example.tasty.presentation.views.CookingProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
