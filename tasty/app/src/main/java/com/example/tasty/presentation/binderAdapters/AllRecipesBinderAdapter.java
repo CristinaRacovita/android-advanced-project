@@ -12,12 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tasty.domain.model.RecipeItem;
 import com.example.tasty.presentation.adapters.AllRecipesAdapter;
+import com.example.tasty.presentation.views.CookingProgressBar;
 
 import java.util.List;
 
 public class AllRecipesBinderAdapter {
     @BindingAdapter({"recipeItems", "progressBar"})
-    public static void setItems(RecyclerView recyclerView, List<RecipeItem> items, ProgressBar progressBar) {
+    public static void setItems(RecyclerView recyclerView, List<RecipeItem> items, CookingProgressBar progressBar) {
         RecyclerView.Adapter<?> adapter = recyclerView.getAdapter();
         if (adapter == null) {
             adapter = new AllRecipesAdapter();
@@ -30,7 +31,7 @@ public class AllRecipesBinderAdapter {
         changeProgressBarVisibility(items, progressBar);
     }
 
-    private static void changeProgressBarVisibility(List<RecipeItem> items, ProgressBar progressBar) {
+    private static void changeProgressBarVisibility(List<RecipeItem> items, CookingProgressBar progressBar) {
         if (items.size() == 0) {
             progressBar.setVisibility(View.VISIBLE);
         } else {
