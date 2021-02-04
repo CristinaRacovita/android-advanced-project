@@ -28,4 +28,6 @@
     <string name="recipe_1">Veggie &amp; Chicken Tart</string>
     <string name="recipe_2">Ice Cream</string>
     <string name="recipe_3">Eggs with Spinach</string>
+    <string name="settings">Settings</string>
+    <string name="new_version_available_update_now">New Version Available Update Now</string>
 </resources>
