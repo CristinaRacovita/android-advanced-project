@@ -1,23 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.activities.SettingsActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <Button
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:textAllCaps="false"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:background="@drawable/oval_button_white"
-        android:textColor="@color/primaryDarkColor"
-        android:text="@string/new_version_available_update_now"/>
+    <data>
+        <variable
+            name="settingsModel"
+            type="com.example.tasty.presentation.viewmodel.SettingsViewModel" />
+    </data>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.activities.SettingsActivity">
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/oval_button_white"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/new_version_available_update_now"
+            android:textAllCaps="false"
+            android:textColor="@color/primaryDarkColor"
+            app:activateService="@{settingsModel.myChoice}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
