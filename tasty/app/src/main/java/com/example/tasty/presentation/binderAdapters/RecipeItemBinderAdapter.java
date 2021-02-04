@@ -1,5 +1,6 @@
 package com.example.tasty.presentation.binderAdapters;
 
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.widget.TextView;
 import android.widget.ToggleButton;
@@ -44,5 +45,14 @@ public class RecipeItemBinderAdapter {
             recipe.setFavourite(isChecked);
             Timber.d(recipe.getFavourite().toString());
         });
+    }
+
+    @BindingAdapter({"titleRes"})
+    public static void setTitle(TextView textView, String titleRes) {
+        Context context = textView.getContext();
+        String packageName = context.getPackageName();
+        int resId = context.getResources().getIdentifier(titleRes, "string", packageName);
+        String title = context.getString(resId);
+        textView.setText(title);
     }
 }

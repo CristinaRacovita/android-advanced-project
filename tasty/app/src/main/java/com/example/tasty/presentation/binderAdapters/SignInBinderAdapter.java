@@ -11,6 +11,7 @@ import androidx.work.ExistingPeriodicWorkPolicy;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
+import com.example.tasty.R;
 import com.example.tasty.domain.SignInWorker;
 import com.example.tasty.presentation.activities.MainActivity;
 import com.example.tasty.presentation.viewmodel.SignInViewModel;
@@ -31,17 +32,17 @@ public class SignInBinderAdapter {
             isGuest = false;
             Timber.d("Username: " + username + " and password: " + password);
             if (username == null) {
-                setAnError(usernameEditText, errorTextView, "Username is null", "Username cannot be empty!");
+                setAnError(usernameEditText, errorTextView, button.getContext().getString(R.string.user_null), button.getContext().getString(R.string.user_empty));
             } else if (username.isEmpty()) {
-                setAnError(usernameEditText, errorTextView, "Username is null", "Username cannot be empty!");
+                setAnError(usernameEditText, errorTextView, button.getContext().getString(R.string.user_null), button.getContext().getString(R.string.user_empty));
             } else if (username.length() <= 5) {
-                setAnError(usernameEditText, errorTextView, "Username is too short", "Enter at least 6 Digit username!");
+                setAnError(usernameEditText, errorTextView, button.getContext().getString(R.string.username_too_short), button.getContext().getString(R.string.enter_character));
             } else if (password == null) {
-                setAnError(passwordEditText, errorTextView, "Password is null", "Password cannot be empty!");
+                setAnError(passwordEditText, errorTextView, button.getContext().getString(R.string.pass_null), button.getContext().getString(R.string.pass_empty));
             } else if (password.isEmpty()) {
-                setAnError(passwordEditText, errorTextView, "Password is null", "Password cannot be empty!");
+                setAnError(passwordEditText, errorTextView, button.getContext().getString(R.string.pass_null), button.getContext().getString(R.string.pass_empty));
             } else if (password.length() <= 5) {
-                setAnError(passwordEditText, errorTextView, "Password is too short", "Enter at least 6 Digit Password!");
+                setAnError(passwordEditText, errorTextView, button.getContext().getString(R.string.pass_too_short), button.getContext().getString(R.string.pass_character));
             } else {
                 login(button, username, password, errorTextView);
             }

@@ -15,6 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
 
+        buildConfigField("boolean", "my_flag", "${rootProject.hasProperty("withCustomFlag")}")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
