@@ -17,7 +17,6 @@ public class UpdateService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-
         startForeground(1, UpdateNotificationFactory.createUpdateNotification(this));
         return super.onStartCommand(intent, flags, startId);
     }

@@ -18,6 +18,15 @@ public class TastyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        do_setup();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.createNotificationChannel(UpdateNotificationChannelFactory.createProcessingWorkNotificationChannel());
+        }
+    }
+
+    private void do_setup() {
         if (!BuildConfig.my_flag) {
             Timber.plant(new Timber.DebugTree());
         } else {
@@ -36,11 +45,6 @@ public class TastyApplication extends Application {
                     FirebaseCrashlytics.getInstance().log(crashlyticsMessage);
                 }
             });
-        }
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            notificationManager.createNotificationChannel(UpdateNotificationChannelFactory.createProcessingWorkNotificationChannel());
         }
     }
 
