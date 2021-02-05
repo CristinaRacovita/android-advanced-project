@@ -1,4 +1,4 @@
-package com.example.tasty.domain;
+package com.example.tasty.domain.workers;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;

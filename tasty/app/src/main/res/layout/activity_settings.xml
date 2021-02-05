@@ -23,7 +23,7 @@
             android:text="@string/new_version_available_update_now"
             android:textAllCaps="false"
             android:textColor="@color/primaryDarkColor"
-            app:activateService="@{settingsModel.myChoice}"
+            app:workManager="@{settingsModel.workManager}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

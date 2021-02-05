@@ -12,7 +12,7 @@ import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
 import com.example.tasty.R;
-import com.example.tasty.domain.SignInWorker;
+import com.example.tasty.domain.workers.SignInWorker;
 import com.example.tasty.presentation.activities.MainActivity;
 import com.example.tasty.presentation.viewmodel.SignInViewModel;
 

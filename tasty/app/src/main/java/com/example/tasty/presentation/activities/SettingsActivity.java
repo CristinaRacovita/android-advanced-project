@@ -5,13 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.work.WorkManager;
 
 import android.os.Bundle;
 
 import com.example.tasty.R;
-import com.example.tasty.databinding.ActivityMainBinding;
 import com.example.tasty.databinding.ActivitySettingsBinding;
-import com.example.tasty.presentation.viewmodel.MainViewModel;
 import com.example.tasty.presentation.viewmodel.SettingsViewModel;
 
 public class SettingsActivity extends AppCompatActivity {
@@ -24,7 +23,7 @@ public class SettingsActivity extends AppCompatActivity {
             @NonNull
             @Override
             public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-                return (T) new SettingsViewModel();
+                return (T) new SettingsViewModel(WorkManager.getInstance(SettingsActivity.this));
             }
         };
 
