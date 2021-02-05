@@ -1,8 +1,12 @@
 package com.example.tasty;
 
 import android.app.Application;
+import android.app.NotificationManager;
+import android.content.Context;
+import android.os.Build;
 import android.util.Log;
 
+import com.example.tasty.presentation.notification.UpdateNotificationChannelFactory;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import org.jetbrains.annotations.NotNull;
@@ -32,6 +36,11 @@ public class TastyApplication extends Application {
                     FirebaseCrashlytics.getInstance().log(crashlyticsMessage);
                 }
             });
+        }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.createNotificationChannel(UpdateNotificationChannelFactory.createProcessingWorkNotificationChannel());
         }
     }
 

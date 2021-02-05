@@ -14,6 +14,7 @@ public class SettingsBinderAdapter {
         if (activate.equals("true")) {
             button.setOnClickListener(view -> {
                 Intent serviceIntent = new Intent(button.getContext(), UpdateService.class);
+                button.getContext().stopService(serviceIntent);
                 button.getContext().startService(serviceIntent);
                 Toast.makeText(button.getContext(), "An update will start...", Toast.LENGTH_LONG).show();
             });
