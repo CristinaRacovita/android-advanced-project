@@ -2,7 +2,6 @@ package com.example.tasty.domain.workers;
 
 import android.content.Context;
 import android.content.Intent;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.work.Worker;
@@ -23,7 +22,7 @@ public class SettingsWorker extends Worker {
     @NonNull
     @Override
     public Result doWork() {
-        Toast.makeText(context, "All updates are done!", Toast.LENGTH_LONG).show();
+
         context.stopService(intent);
         return Result.success();
     }
