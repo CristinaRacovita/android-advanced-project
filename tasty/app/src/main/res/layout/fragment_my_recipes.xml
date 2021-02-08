@@ -22,8 +22,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recipes_recycler_view"
-            app:items="@{favViewModel.items}"
-            app:bar="@{progressBar}"
+            app:recipeItems="@{favViewModel.items}"
+            app:progressBar="@{progressBar}"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
