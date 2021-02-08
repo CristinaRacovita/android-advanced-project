@@ -5,6 +5,10 @@
         <variable
             name="model"
             type="com.example.tasty.domain.model.RecipeItem" />
+
+        <variable
+            name="favViewModel"
+            type="com.example.tasty.presentation.viewmodel.MyRecipesViewModel" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -35,6 +39,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             app:recipe="@{model}"
+            app:addFavouriteUseCase="@{favViewModel.addFavouriteUseCase}"
             android:background="@drawable/favourite_toggle"
             android:textColor="@android:color/transparent"
             android:layout_gravity="bottom|end"

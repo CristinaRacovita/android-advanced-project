@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.example.tasty.domain.model.RecipeItem;
+import com.example.tasty.domain.useCases.AddFavouriteUseCase;
 
 import timber.log.Timber;
 
@@ -39,11 +40,14 @@ public class RecipeItemBinderAdapter {
                 });
     }
 
-    @BindingAdapter({"recipe"})
-    public static void setFavouriteRecipe(ToggleButton toggleButton, RecipeItem recipe) {
+    @BindingAdapter({"recipe","addFavouriteUseCase"})
+    public static void setFavouriteRecipe(ToggleButton toggleButton, RecipeItem recipe, AddFavouriteUseCase addFavouriteUseCase) {
         toggleButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            recipe.setFavourite(isChecked);
-            Timber.d(recipe.getFavourite().toString());
+            if (isChecked) {
+                if (addFavouriteUseCase != null) {
+                    addFavouriteUseCase.addItem(recipe.getTitleRecipe(), recipe.getImageUrl());
+                }
+            }
         });
     }
 
