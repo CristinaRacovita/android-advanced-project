@@ -9,13 +9,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tasty.R;
 import com.example.tasty.databinding.RecipeListItemLayoutBinding;
-import com.example.tasty.domain.model.RecipeItem;
+import com.example.tasty.presentation.viewmodel.RecipeItemViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AllRecipesAdapter extends RecyclerView.Adapter<AllRecipesAdapter.AllRecipesViewHolder> {
-    private final List<RecipeItem> itemList;
+    private final List<RecipeItemViewModel> itemList;
 
     public AllRecipesAdapter() {
         this.itemList = new ArrayList<>();
@@ -34,7 +34,7 @@ public class AllRecipesAdapter extends RecyclerView.Adapter<AllRecipesAdapter.Al
 
     @Override
     public void onBindViewHolder(@NonNull AllRecipesAdapter.AllRecipesViewHolder holder, int position) {
-        RecipeItem item = itemList.get(position);
+        RecipeItemViewModel item = itemList.get(position);
         holder.bind(item);
     }
 
@@ -43,7 +43,7 @@ public class AllRecipesAdapter extends RecyclerView.Adapter<AllRecipesAdapter.Al
         return itemList.size();
     }
 
-    public void updateItems(List<RecipeItem> updatedList) {
+    public void updateItems(List<RecipeItemViewModel> updatedList) {
         this.itemList.addAll(updatedList);
         notifyDataSetChanged();
     }
@@ -56,7 +56,7 @@ public class AllRecipesAdapter extends RecyclerView.Adapter<AllRecipesAdapter.Al
             this.binding = binding;
         }
 
-        public void bind(RecipeItem model) {
+        public void bind(RecipeItemViewModel model) {
             binding.setModel(model);
         }
     }

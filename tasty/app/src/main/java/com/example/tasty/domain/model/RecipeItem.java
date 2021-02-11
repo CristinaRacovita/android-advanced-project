@@ -3,12 +3,12 @@ package com.example.tasty.domain.model;
 public class RecipeItem {
     private String titleRecipe;
     private String imageUrl;
-    private Boolean isFavourite;
+    private Boolean isFav;
 
-    public RecipeItem(String titleRecipe, String imageUrl) {
+    public RecipeItem(String titleRecipe, String imageUrl, Boolean isFav) {
         this.titleRecipe = titleRecipe;
         this.imageUrl = imageUrl;
-        this.isFavourite = false;
+        this.isFav = isFav;
     }
 
     public String getTitleRecipe() {
@@ -27,11 +27,11 @@ public class RecipeItem {
         this.imageUrl = imageUrl;
     }
 
-    public Boolean getFavourite() {
-        return isFavourite;
+    public Boolean getFav() {
+        return isFav;
     }
 
-    public void setFavourite(Boolean favourite) {
-        isFavourite = favourite;
+    public void setFav(Boolean fav) {
+        isFav = fav;
     }
 }

@@ -17,6 +17,8 @@ import com.example.tasty.presentation.activities.SettingsActivity;
 
 public class MyProfileFragment extends Fragment {
 
+    private View mLeak;
+
     public MyProfileFragment() {
     }
 
@@ -29,7 +31,8 @@ public class MyProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         setHasOptionsMenu(true);
-        return inflater.inflate(R.layout.fragment_my_profile, container, false);
+        mLeak = inflater.inflate(R.layout.fragment_my_profile, container, false);
+        return mLeak;
     }
 
     @Override
@@ -45,5 +48,11 @@ public class MyProfileFragment extends Fragment {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        mLeak = null;
     }
 }

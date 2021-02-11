@@ -12,7 +12,6 @@ import androidx.databinding.BindingAdapter;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.transition.Transition;
-import com.example.tasty.domain.model.RecipeItem;
 
 import timber.log.Timber;
 
@@ -39,12 +38,9 @@ public class RecipeItemBinderAdapter {
                 });
     }
 
-    @BindingAdapter({"recipe"})
-    public static void setFavouriteRecipe(ToggleButton toggleButton, RecipeItem recipe) {
-        toggleButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            recipe.setFavourite(isChecked);
-            Timber.d(recipe.getFavourite().toString());
-        });
+    @BindingAdapter({"isFav"})
+    public static void setFavouriteRecipe(ToggleButton toggleButton, Boolean isFav) {
+        toggleButton.setChecked(isFav);
     }
 
     @BindingAdapter({"titleRes"})

@@ -3,14 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/action_my_recipes">
+    app:startDestination="@id/action_explore">
 
     <fragment
         android:id="@+id/action_explore"
         android:name="com.example.tasty.presentation.fragments.AllRecipesFragment"
         android:label="AllRecipesFragment"
         tools:layout="@layout/all_recipes_fragment" />
-
     <fragment
         android:id="@+id/action_my_recipes"
         android:name="com.example.tasty.presentation.fragments.MyRecipesFragment"

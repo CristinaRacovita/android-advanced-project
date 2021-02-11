@@ -13,12 +13,6 @@
         android:enabled="true"
         android:icon="@drawable/ic_cook_book"
         android:title="@string/explore" />
-    <item
-        android:id="@+id/action_add"
-        app:showAsAction="ifRoom|withText"
-        android:enabled="true"
-        android:icon="@drawable/ic_plus"
-        android:title="@string/add_recipe" />
 
     <item
         android:id="@+id/action_profile"
