@@ -13,8 +13,8 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.tasty.R;
-import com.example.tasty.data.DbDataSource;
 import com.example.tasty.data.db.AppDatabase;
+import com.example.tasty.data.db.DbDataSource;
 import com.example.tasty.data.remote.RecipeAPI;
 import com.example.tasty.data.remote.RemoteDataSource;
 import com.example.tasty.databinding.AllRecipesFragmentBinding;
@@ -51,7 +51,7 @@ public class AllRecipesFragment extends Fragment {
                 FavouriteMediator favouriteMediator = new FavouriteMediator(favouriteRepository);
                 FavouriteAddItemUseCase addItemUseCase = new FavouriteAddItemUseCase(favouriteMediator);
                 FavouriteDeleteItemUseCase deleteItemUseCase = new FavouriteDeleteItemUseCase(favouriteMediator);
-                FavouriteUpdateItemCase favouriteUpdateItemCase = new FavouriteUpdateItemCase(mediator, favouriteMediator);
+                FavouriteUpdateItemCase favouriteUpdateItemCase = new FavouriteUpdateItemCase(favouriteMediator);
                 FavouriteFetchItemsUseCase fetchItemsUseCase = new FavouriteFetchItemsUseCase(favouriteMediator);
 
                 return (T) new AllRecipesViewModel(useCase, addItemUseCase, deleteItemUseCase, favouriteUpdateItemCase, fetchItemsUseCase);

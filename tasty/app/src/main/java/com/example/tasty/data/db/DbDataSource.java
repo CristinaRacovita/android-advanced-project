@@ -1,6 +1,6 @@
-package com.example.tasty.data;
+package com.example.tasty.data.db;
 
-import com.example.tasty.data.db.RecipeDao;
+import com.example.tasty.data.RecipeItemDTO;
 import com.example.tasty.domain.FavouriteRepository;
 import com.example.tasty.domain.builders.RecipeItemBuilder;
 

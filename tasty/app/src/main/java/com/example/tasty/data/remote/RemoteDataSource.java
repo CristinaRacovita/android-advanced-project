@@ -31,20 +31,4 @@ public class RemoteDataSource implements RecipeItemsRepository {
             return Collections.emptyList();
         }
     }
-
-    @Override
-    public void updateFav(RecipeItemDTO recipeItemDTO) {
-        Call<RecipeItemDTO> call = api.updateRecipe(recipeItemDTO.getFav(), recipeItemDTO.getRecipeTitleId());
-        call.enqueue(new Callback<RecipeItemDTO>() {
-            @Override
-            public void onResponse(Call<RecipeItemDTO> call, Response<RecipeItemDTO> response) {
-                Timber.d("Success");
-            }
-
-            @Override
-            public void onFailure(Call<RecipeItemDTO> call, Throwable t) {
-                Timber.w("Failure%s", t.getMessage());
-            }
-        });
-    }
 }
