@@ -1,11 +1,9 @@
 package com.example.tasty.presentation.viewmodel;
 
 import androidx.databinding.ObservableArrayList;
-import androidx.databinding.ObservableField;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.OnLifecycleEvent;
 import androidx.lifecycle.Transformations;
 import androidx.lifecycle.ViewModel;
@@ -66,8 +64,8 @@ public class AllRecipesViewModel extends ViewModel implements LifecycleObserver 
         this.items = items;
     }
 
-    private Boolean checkIfFav(RecipeItem recipeItem){
-        if(dbItems != null) {
+    private Boolean checkIfFav(RecipeItem recipeItem) {
+        if (dbItems != null) {
             for (RecipeItem item : dbItems) {
                 if (item.getTitleRecipe().equals(recipeItem.getTitleRecipe())) {
                     return true;

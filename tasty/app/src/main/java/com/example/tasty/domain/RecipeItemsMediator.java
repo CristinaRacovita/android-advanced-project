@@ -30,23 +30,4 @@ public class RecipeItemsMediator {
 
         return liveRecipes;
     }
-
-    public void updateRecipe(RecipeItem recipeItem) {
-        executorService.execute(() -> {
-            remoteRepository.updateFav(RecipeItemBuilder.toDTO(recipeItem));
-        });
-
-        List<RecipeItem> liveRecipes = RecipeItemsMediator.this.liveRecipes.getValue();
-        if (liveRecipes != null) {
-            Iterator<RecipeItem> iterator = liveRecipes.iterator();
-
-            while (iterator.hasNext()) {
-                if (iterator.next().getTitleRecipe().equals(recipeItem.getTitleRecipe())) {
-                    iterator.next().setFav(recipeItem.getFav());
-                }
-            }
-
-            RecipeItemsMediator.this.liveRecipes.setValue(liveRecipes);
-        }
-    }
 }
