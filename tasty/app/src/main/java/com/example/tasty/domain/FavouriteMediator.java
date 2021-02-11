@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.tasty.domain.builders.RecipeItemBuilder;
 import com.example.tasty.domain.model.RecipeItem;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -33,17 +34,22 @@ public class FavouriteMediator {
     public void addRecipe(RecipeItem item) {
         executorService.execute(() -> {
             dbRepository.insert(RecipeItemBuilder.toDTO(item));
-            List<RecipeItem> liveRecipes = FavouriteMediator.this.liveRecipes.getValue();
-            liveRecipes.add(item);
-
-            FavouriteMediator.this.liveRecipes.setValue(liveRecipes);
         });
+
+        List<RecipeItem> liveRecipes = FavouriteMediator.this.liveRecipes.getValue();
+        if (liveRecipes != null) {
+            liveRecipes.add(item);
+            FavouriteMediator.this.liveRecipes.setValue(liveRecipes);
+        }
     }
 
     public void deleteById(String id) {
         executorService.execute(() -> {
             dbRepository.deleteById(id);
-            List<RecipeItem> liveRecipes = FavouriteMediator.this.liveRecipes.getValue();
+        });
+
+        List<RecipeItem> liveRecipes = FavouriteMediator.this.liveRecipes.getValue();
+        if (liveRecipes != null) {
             Iterator<RecipeItem> iterator = liveRecipes.iterator();
 
             while (iterator.hasNext()) {
@@ -53,15 +59,23 @@ public class FavouriteMediator {
             }
 
             FavouriteMediator.this.liveRecipes.setValue(liveRecipes);
-        });
+        }
     }
 
-    public RecipeItem getById(String id) {
-        for (RecipeItem item : liveRecipes.getValue()) {
-            if (item.getTitleRecipe().equals(id)) {
-                return item;
+    public void updateRecipe(String id, Boolean isFav) {
+        executorService.execute(() -> dbRepository.updateFav(id, isFav));
+
+        List<RecipeItem> liveRecipes = FavouriteMediator.this.liveRecipes.getValue();
+        List<RecipeItem> recipeItems = new ArrayList<>();
+        if (liveRecipes != null) {
+            for(RecipeItem item: liveRecipes){
+                if(item.getTitleRecipe().equals(id)){
+                   item.setFav(isFav);
+                }
+                recipeItems.add(item);
             }
+
+            FavouriteMediator.this.liveRecipes.setValue(recipeItems);
         }
-        return null;
     }
 }

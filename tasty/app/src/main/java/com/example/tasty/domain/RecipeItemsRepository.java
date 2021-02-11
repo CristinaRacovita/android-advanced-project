@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface RecipeItemsRepository {
     List<RecipeItemDTO> getRecipeItems();
+    void updateFav(RecipeItemDTO recipeItemDTO);
 }

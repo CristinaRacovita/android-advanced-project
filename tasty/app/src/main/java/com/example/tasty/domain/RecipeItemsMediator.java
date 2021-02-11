@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.tasty.domain.builders.RecipeItemBuilder;
 import com.example.tasty.domain.model.RecipeItem;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -28,5 +29,24 @@ public class RecipeItemsMediator {
         });
 
         return liveRecipes;
+    }
+
+    public void updateRecipe(RecipeItem recipeItem) {
+        executorService.execute(() -> {
+            remoteRepository.updateFav(RecipeItemBuilder.toDTO(recipeItem));
+        });
+
+        List<RecipeItem> liveRecipes = RecipeItemsMediator.this.liveRecipes.getValue();
+        if (liveRecipes != null) {
+            Iterator<RecipeItem> iterator = liveRecipes.iterator();
+
+            while (iterator.hasNext()) {
+                if (iterator.next().getTitleRecipe().equals(recipeItem.getTitleRecipe())) {
+                    iterator.next().setFav(recipeItem.getFav());
+                }
+            }
+
+            RecipeItemsMediator.this.liveRecipes.setValue(liveRecipes);
+        }
     }
 }

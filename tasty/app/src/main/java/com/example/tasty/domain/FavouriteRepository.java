@@ -8,5 +8,5 @@ public interface FavouriteRepository {
     List<RecipeItemDTO> getRecipeItems();
     void insert(RecipeItemDTO recipeItemDTO);
     void deleteById(String id);
-    RecipeItemDTO getById(String id);
+    void updateFav(String id, Boolean isFav);
 }

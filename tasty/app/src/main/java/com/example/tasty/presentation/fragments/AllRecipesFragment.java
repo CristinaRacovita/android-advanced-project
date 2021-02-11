@@ -24,10 +24,14 @@ import com.example.tasty.domain.RecipeItemsMediator;
 import com.example.tasty.domain.RecipeItemsRepository;
 import com.example.tasty.domain.useCases.FavouriteAddItemUseCase;
 import com.example.tasty.domain.useCases.FavouriteDeleteItemUseCase;
+import com.example.tasty.domain.useCases.FavouriteFetchItemsUseCase;
+import com.example.tasty.domain.useCases.FavouriteUpdateItemCase;
 import com.example.tasty.domain.useCases.FetchRecipeItemsUseCase;
 import com.example.tasty.presentation.viewmodel.AllRecipesViewModel;
 
 public class AllRecipesFragment extends Fragment {
+
+    private View mLeak;
 
     public AllRecipesFragment() {
     }
@@ -47,8 +51,10 @@ public class AllRecipesFragment extends Fragment {
                 FavouriteMediator favouriteMediator = new FavouriteMediator(favouriteRepository);
                 FavouriteAddItemUseCase addItemUseCase = new FavouriteAddItemUseCase(favouriteMediator);
                 FavouriteDeleteItemUseCase deleteItemUseCase = new FavouriteDeleteItemUseCase(favouriteMediator);
+                FavouriteUpdateItemCase favouriteUpdateItemCase = new FavouriteUpdateItemCase(mediator, favouriteMediator);
+                FavouriteFetchItemsUseCase fetchItemsUseCase = new FavouriteFetchItemsUseCase(favouriteMediator);
 
-                return (T) new AllRecipesViewModel(useCase, addItemUseCase, deleteItemUseCase);
+                return (T) new AllRecipesViewModel(useCase, addItemUseCase, deleteItemUseCase, favouriteUpdateItemCase, fetchItemsUseCase);
             }
         };
         AllRecipesViewModel viewModel = new ViewModelProvider(this, factory).get(AllRecipesViewModel.class);
@@ -59,8 +65,14 @@ public class AllRecipesFragment extends Fragment {
         binding.setLifecycleOwner(this);
         getLifecycle().addObserver(viewModel);
 
-        return binding.getRoot();
+        mLeak = binding.getRoot();
+        return mLeak;
 
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        mLeak = null;
+    }
 }

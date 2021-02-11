@@ -33,6 +33,7 @@
             android:layout_marginBottom="10dp"
             android:background="@drawable/favourite_toggle"
             android:checked="@={model.isFav}"
+            app:isFav="@{model.isFav}"
             android:onClick="@{(view) -> model.onClickedItem(view,model, model.isFav)}"
             android:textColor="@android:color/transparent" />
 

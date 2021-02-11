@@ -6,6 +6,9 @@ import com.example.tasty.domain.RecipeItemsRepository;
 import java.util.Collections;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import timber.log.Timber;
 
 public class RemoteDataSource implements RecipeItemsRepository {
@@ -27,5 +30,21 @@ public class RemoteDataSource implements RecipeItemsRepository {
             Timber.tag(TAG).w(e, "Something went wrong");
             return Collections.emptyList();
         }
+    }
+
+    @Override
+    public void updateFav(RecipeItemDTO recipeItemDTO) {
+        Call<RecipeItemDTO> call = api.updateRecipe(recipeItemDTO.getFav(), recipeItemDTO.getRecipeTitleId());
+        call.enqueue(new Callback<RecipeItemDTO>() {
+            @Override
+            public void onResponse(Call<RecipeItemDTO> call, Response<RecipeItemDTO> response) {
+                Timber.d("Success");
+            }
+
+            @Override
+            public void onFailure(Call<RecipeItemDTO> call, Throwable t) {
+                Timber.w("Failure%s", t.getMessage());
+            }
+        });
     }
 }

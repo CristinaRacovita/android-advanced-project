@@ -30,7 +30,7 @@ public class DbDataSource implements FavouriteRepository {
     }
 
     @Override
-    public RecipeItemDTO getById(String id) {
-        return RecipeItemBuilder.toDTOfromEntity(dao.getById(id));
+    public void updateFav(String id, Boolean isFav) {
+        dao.updateFav(id, isFav);
     }
 }

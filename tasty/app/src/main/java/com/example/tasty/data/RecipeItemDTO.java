@@ -9,9 +9,13 @@ public class RecipeItemDTO {
     @SerializedName("image_url")
     private final String imageUrl;
 
-    public RecipeItemDTO(String titleRecipe, String imageUrl) {
+    @SerializedName("favourite")
+    private final Boolean isFav;
+
+    public RecipeItemDTO(String titleRecipe, String imageUrl, Boolean isFav) {
         this.recipeTitleId = titleRecipe;
         this.imageUrl = imageUrl;
+        this.isFav = isFav;
     }
 
     public String getRecipeTitleId() {
@@ -20,5 +24,9 @@ public class RecipeItemDTO {
 
     public String getImageUrl() {
         return imageUrl;
+    }
+
+    public Boolean getFav() {
+        return isFav;
     }
 }
