@@ -13,7 +13,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.example.tasty.domain.model.RecipeItem;
-import com.example.tasty.domain.useCases.AddFavouriteUseCase;
 
 import timber.log.Timber;
 
@@ -40,16 +39,12 @@ public class RecipeItemBinderAdapter {
                 });
     }
 
-    @BindingAdapter({"recipe","addFavouriteUseCase"})
-    public static void setFavouriteRecipe(ToggleButton toggleButton, RecipeItem recipe, AddFavouriteUseCase addFavouriteUseCase) {
-        toggleButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (isChecked) {
-                if (addFavouriteUseCase != null) {
-                    addFavouriteUseCase.addItem(recipe.getTitleRecipe(), recipe.getImageUrl());
-                }
-            }
-        });
-    }
+//    @BindingAdapter({"isFav"})
+//    public static void setFavouriteRecipe(ToggleButton toggleButton,Boolean isFav) {
+//        toggleButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
+//            isFav = isChecked;
+//        });
+//    }
 
     @BindingAdapter({"titleRes"})
     public static void setTitle(TextView textView, String titleRes) {

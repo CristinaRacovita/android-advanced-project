@@ -10,10 +10,13 @@ public class SignInViewModel extends ViewModel {
 
     public final WorkManager workManager;
 
-    public ObservableField<String> username = new ObservableField<>();
-    public ObservableField<String> password = new ObservableField<>();
+    public ObservableField<String> username;
+    public ObservableField<String> password;
 
     public SignInViewModel(WorkManager workManager) {
+        username = new ObservableField<>();
+        password = new ObservableField<>();
+
         this.workManager = workManager;
     }
 }

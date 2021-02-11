@@ -10,26 +10,26 @@ import androidx.lifecycle.ViewModel;
 import com.example.tasty.domain.model.RecipeItem;
 import com.example.tasty.domain.useCases.FavouriteAddItemUseCase;
 import com.example.tasty.domain.useCases.FavouriteDeleteItemUseCase;
-import com.example.tasty.domain.useCases.FetchRecipeItemsUseCase;
+import com.example.tasty.domain.useCases.FavouriteFetchItemsUseCase;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AllRecipesViewModel extends ViewModel implements LifecycleObserver {
+public class MyRecipeViewModel extends ViewModel implements LifecycleObserver {
     public LiveData<List<RecipeItemViewModel>> items;
-    public final FetchRecipeItemsUseCase fetchRecipeItemsUseCase;
     public final FavouriteAddItemUseCase favouriteAddItemUseCase;
     public final FavouriteDeleteItemUseCase favouriteDeleteItemUseCase;
+    public final FavouriteFetchItemsUseCase favouriteFetchItemsUseCase;
 
-    public AllRecipesViewModel(FetchRecipeItemsUseCase fetchRecipeItemsUseCase, FavouriteAddItemUseCase favouriteAddItemUseCase, FavouriteDeleteItemUseCase favouriteDeleteItemUseCase) {
-        this.fetchRecipeItemsUseCase = fetchRecipeItemsUseCase;
+    public MyRecipeViewModel(FavouriteFetchItemsUseCase favouriteFetchItemsUseCase, FavouriteAddItemUseCase favouriteAddItemUseCase, FavouriteDeleteItemUseCase favouriteDeleteItemUseCase) {
+        this.favouriteFetchItemsUseCase = favouriteFetchItemsUseCase;
         this.favouriteAddItemUseCase = favouriteAddItemUseCase;
         this.favouriteDeleteItemUseCase = favouriteDeleteItemUseCase;
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     public void onCreated() {
-        items = Transformations.map(fetchRecipeItemsUseCase.getItems(), input -> {
+        items = Transformations.map(favouriteFetchItemsUseCase.getItems(), input -> {
             List<RecipeItemViewModel> data = new ArrayList<>();
             for (RecipeItem item : input) {
                 RecipeItemViewModel viewModel = new RecipeItemViewModel(favouriteAddItemUseCase, favouriteDeleteItemUseCase);

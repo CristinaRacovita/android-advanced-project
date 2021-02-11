@@ -6,7 +6,6 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.tasty.domain.builders.RecipeItemBuilder;
 import com.example.tasty.domain.model.RecipeItem;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

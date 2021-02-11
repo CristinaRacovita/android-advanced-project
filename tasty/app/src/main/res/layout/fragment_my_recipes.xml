@@ -6,7 +6,7 @@
     <data>
         <variable
             name="favViewModel"
-            type="com.example.tasty.presentation.viewmodel.MyRecipesViewModel" />
+            type="com.example.tasty.presentation.viewmodel.MyRecipeViewModel" />
     </data>
 
     <FrameLayout

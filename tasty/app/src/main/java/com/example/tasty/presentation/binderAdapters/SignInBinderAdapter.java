@@ -28,9 +28,9 @@ public class SignInBinderAdapter {
     public static void check(Button button, String username, String password, EditText usernameEditText, EditText passwordEditText, TextView errorTextView) {
         button.setOnClickListener(v -> {
             //throw new RuntimeException("Crash Trash");
-            Timber.i("Log in as a user");
+            Timber.tag(SignInViewModel.LOG_TAG).i("Log in as a user");
             isGuest = false;
-            Timber.d("Username: " + username + " and password: " + password);
+            Timber.tag(SignInViewModel.LOG_TAG).d("Username: " + username + " and password: " + password);
             if (username == null) {
                 setAnError(usernameEditText, errorTextView, button.getContext().getString(R.string.user_null), button.getContext().getString(R.string.user_empty));
             } else if (username.isEmpty()) {
@@ -51,7 +51,7 @@ public class SignInBinderAdapter {
 
     private static void login(Button button, String username, String password, TextView errorTextView) {
         if (username.equals("admin1234") && password.equals("admin1234")) {
-            Timber.i("Username and password is correct");
+            Timber.tag(SignInViewModel.LOG_TAG).i("Username and password is correct");
             Intent mainIntent = new Intent(button.getContext(), MainActivity.class);
             button.getContext().startActivity(mainIntent);
             errorTextView.setVisibility(View.INVISIBLE);
@@ -70,11 +70,11 @@ public class SignInBinderAdapter {
     @BindingAdapter({"errors", "workManager"})
     public static void loginAsGuest(Button button, TextView errors, WorkManager workManager) {
         button.setOnClickListener(v -> {
-            Timber.i("Log in as a guest");
+            Timber.tag(SignInViewModel.LOG_TAG).i("Log in as a guest");
             errors.setVisibility(View.INVISIBLE);
             isGuest = true;
 
-            Timber.d("Start receive notifications");
+            Timber.tag(SignInViewModel.LOG_TAG).d("Start receive notifications");
 
             if (isGuest) {
                 final PeriodicWorkRequest periodicWorkRequest1 = new PeriodicWorkRequest.Builder(SignInWorker.class, Duration.ofDays(1L))

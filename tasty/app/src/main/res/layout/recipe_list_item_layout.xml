@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <data>
-        <variable
-            name="model"
-            type="com.example.tasty.domain.model.RecipeItem" />
 
-        <variable
-            name="favViewModel"
-            type="com.example.tasty.presentation.viewmodel.MyRecipesViewModel" />
-    </data>
-
-    <androidx.cardview.widget.CardView
+    <androidx.cardview.widget.CardView xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_margin="10dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp">
@@ -24,28 +14,36 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:gravity="top|center"
-            tools:text="Title for Recipe"
-            app:titleRes="@{model.titleRecipe}"
-            app:image_url="@{model.imageUrl}"
-            android:textColor="@color/white"
             android:shadowColor="#000000"
             android:shadowDx="1.5"
             android:shadowDy="1.3"
             android:shadowRadius="10"
+            android:textColor="@color/white"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:image_url="@{model.liveUrl}"
+            app:titleRes="@{model.liveTitle}"
+            tools:text="Title for Recipe" />
 
         <ToggleButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            app:recipe="@{model}"
-            app:addFavouriteUseCase="@{favViewModel.addFavouriteUseCase}"
-            android:background="@drawable/favourite_toggle"
-            android:textColor="@android:color/transparent"
             android:layout_gravity="bottom|end"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/favourite_toggle"
+            android:checked="@={model.isFav}"
+            android:onClick="@{(view) -> model.onClickedItem(view,model, model.isFav)}"
+            android:textColor="@android:color/transparent" />
 
 
     </androidx.cardview.widget.CardView>
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.tasty.presentation.viewmodel.RecipeItemViewModel" />
+
+    </data>
 </layout>

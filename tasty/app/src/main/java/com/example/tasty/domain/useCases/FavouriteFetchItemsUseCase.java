@@ -7,14 +7,15 @@ import com.example.tasty.domain.model.RecipeItem;
 
 import java.util.List;
 
-public class FetchFavouriteUseCase {
-    private final FavouriteMediator favouriteMediator;
+public class FavouriteFetchItemsUseCase {
+    public final FavouriteMediator favouriteMediator;
 
-    public FetchFavouriteUseCase(FavouriteMediator favouriteMediator) {
+    public FavouriteFetchItemsUseCase(FavouriteMediator favouriteMediator) {
         this.favouriteMediator = favouriteMediator;
     }
 
+
     public LiveData<List<RecipeItem>> getItems() {
-        return favouriteMediator.getFavItems();
+        return favouriteMediator.getRecipes();
     }
 }
