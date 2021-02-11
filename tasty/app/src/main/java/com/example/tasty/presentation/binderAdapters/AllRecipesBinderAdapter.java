@@ -23,7 +23,7 @@ public class AllRecipesBinderAdapter {
     @BindingAdapter({"recipeItems", "progressBar"})
     public static void setItems(RecyclerView recyclerView, List<RecipeItemViewModel> recipeItems, CookingProgressBar progressBar) {
         RecyclerView.Adapter<?> adapter = recyclerView.getAdapter();
-        progressBar.setVisibility(View.GONE);
+
         if (adapter == null) {
             adapter = new AllRecipesAdapter();
             recyclerView.setAdapter(adapter);
@@ -33,7 +33,7 @@ public class AllRecipesBinderAdapter {
             ((AllRecipesAdapter) adapter).updateItems(recipeItems);
         }
         if(recipeItems != null) {
-            //changeProgressBarVisibility(recipeItems, progressBar);
+            changeProgressBarVisibility(recipeItems, progressBar);
         }
     }
 

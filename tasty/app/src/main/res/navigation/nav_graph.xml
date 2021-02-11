@@ -10,7 +10,6 @@
         android:name="com.example.tasty.presentation.fragments.AllRecipesFragment"
         android:label="AllRecipesFragment"
         tools:layout="@layout/all_recipes_fragment" />
-
     <fragment
         android:id="@+id/action_my_recipes"
         android:name="com.example.tasty.presentation.fragments.MyRecipesFragment"
