@@ -1,6 +1,25 @@
-# Android Advanced Project
-- App name: Tasty
-- Location: https://github.com/CristinaRacovita/android-advanced-project
-- Backend: https://tasty-69676-default-rtdb.firebaseio.com/recipes.json
-- Reviewers: Diana-Ioana Giurgiu
-- Reviewed: Diana-Ioana Giurgiu
+# Android Advanced Project - Tasty
+
+For this app I use:
+- Retrofit + OkHttp Libraries
+- [Firebase](https://tasty-69676-default-rtdb.firebaseio.com/recipes.json)
+- Glide Library
+- MVVM Architecture
+- Worker (Periodical/OneTime)
+- Notification API
+- Localization
+- Canvas and Paint Libraries
+- LeakCanary, Crashlytics & Timber
+
+# Introduction
+This is the final project for Android Advanced Google Course. 
+Android Application develop in Java language that allows you to search recipes and add your favourite ones in a different list.
+
+# Pre-requisites
+- IDE: Android Studio
+- Java JDK 11
+
+# Getting Started
+- Download the code
+- Open the code in Android Studio
+- Run the app
