@@ -13,7 +13,7 @@ For this app I use:
 
 # Introduction
 This is the final project for Android Advanced Google Course. 
-Android Application develop in Java language that allows you to search recipes and add your favourite ones in a different list.
+This Android application is developed in Java language that allows you to search recipes and add your favourite ones in a different list.
 
 # Pre-requisites
 - IDE: Android Studio
